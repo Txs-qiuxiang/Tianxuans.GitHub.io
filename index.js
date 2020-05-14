@@ -1,3 +1,4 @@
+//tab层
 $('.page .content').hide();
 $('.page .contents .content').eq(0).show();
 $('.page .head').eq(0).addClass('active');
