@@ -5,19 +5,62 @@ body {
 
 }
 .page {
-
+    position: relative;
 }
 .page .header {
     width: 100%;
     height: 50px;
     line-height: 50px;
+}
+/* 头部动画 */
+.page .headName{
+    width: 4.6rem;
+    padding: 1rem 0.8rem;
+    min-height: 17rem;
+    position: absolute;
+    top: 65px;
+    left: 25px;
+    padding: 5px;
+    border-radius: 6px;
+    color: rgb(233, 241, 246);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px;
+}
+.page .headName span{
+    font-size: 2.5rem;
+    font-family: TChinese, SimSun, FangSong, STSong, STZhongsong, LiSu, KaiTi, "Microsoft YaHei";
+    display: flex;
+    text-align: center;
+}
+
+.headName{
+    /* -webkit-animation: headanimation 3s 0s ease-out infinite; */
+    animation: headanimation 5s 0s ease-out 1;
+    animation-fill-mode : forwards
 
 }
-.page .headName{
-    width: 200px;
-    height: 100%;
-    float: left;
-}
+ @keyframes headanimation {
+     0% {
+         left: 25px;
+         right: auto;
+
+     }
+     25% {
+         left: 300px;
+         right: auto;
+
+     }
+     50% {
+          left: auto;
+          right: 300px;
+
+     }
+     100% {
+         left: auto;
+         right: 25px;
+         top: 10px;
+     }
+ }
+
 .page .headerTab{
     float: left;
 }
@@ -46,11 +89,14 @@ body {
     display: none;
 }
 .page .contents img{
-    width: 150px;
+    width: 160px;
 }
-
-.page .contents .demo{
-    font-size: 20px;
+/* 首页 */
+.page .contents .info {
+    margin-left: 200px;
+}
+.page .contents .info img{
+    margin-left: 200px;
 }
 /* skill */
 /* 水波纹动画 */
@@ -81,33 +127,53 @@ body {
          transform: scale(1);
          opacity: 0.8;
      }
-
+     /* 20% {
+         -webkit-transform: scale(1.5);
+         transform: scale(1.25);
+         opacity: 0.4;
+     } */
      100% {
          -webkit-transform: scale(1.5);
          transform: scale(1.5);
          opacity: 0;
      }
  }
+
 .water1 {
     -webkit-animation: wateranimate 6s 0s ease-out infinite;
     animation: wateranimate 6s 0s ease-out infinite;
 }
-.water1 {
+.water3 {
+    -webkit-animation: wateranimate 6s 2s ease-out infinite;
+    animation: wateranimate 6s 2s ease-out infinite;
+}
+.water4 {
+    -webkit-animation: wateranimate 6s 4s ease-out infinite;
+    animation: wateranimate 6s 4s ease-out infinite;
+}
+.water5 {
+    -webkit-animation: wateranimate 6s 6s ease-out infinite;
+    animation: wateranimate 6s 6s ease-out infinite;
+}
+.water1,
+.water3,
+.water4,
+.water5 {
     padding: 50%;
     position: absolute;
     box-shadow: 0 0 120px 30px rgb(31, 153, 235) inset;
     border-radius: 100%;
     z-index: 1;
-    opacity: 1;
+    opacity: 0;
 }
 .waterColor1 {
-    box-shadow: 0 0 120px 30px rgb(130, 235, 31) inset;
+    box-shadow: 0 0 120px 30px rgb(248, 224, 8) inset;
 }
 .waterColor2 {
-    box-shadow: 0 0 120px 30px rgb(126, 31, 235) inset;
+    box-shadow: 0 0 120px 30px rgb(17, 50, 233) inset;
 }
 .waterColor3 {
-    box-shadow: 0 0 120px 30px rgb(203, 238, 6) inset;
+    box-shadow: 0 0 120px 30px rgb(243, 157, 87) inset;
 }
 .water2 {
     line-height: 100px;
@@ -120,6 +186,71 @@ body {
     font-size: 16px;
     padding: 5px;
     border-radius: 5px;
+}
+/* 案例 */
+.page .contents .demo {
+    width: 160px;
+    height: 328px;
+    margin: 10px 0 0 100px;
+    overflow: hidden;
+    font-size: 20px;
+    border: 5px outset #b9d1c4;
+    border-radius: 20px;
+    box-shadow: #6d7d75 5px 5px
+}
+.demo li {
+     width: 160px;
+     height: 328px;
+     float: left;
+     list-style: none;
+ }
+.demo ul {
+    width: 800px;
+    padding: 0;
+    margin: 0;
+    animation: myani 15s 0s alternate ease-in-out infinite;
+    -webkit-animation: myani 15s 0s alternate ease-in-out infinite;
+}
+
+@keyframes myani {
+    0% {
+        margin-left: 0px;
+    }
+
+    20% {
+        margin-left: 0px;
+    }
+    21% {
+        margin-left: -160px;
+    }
+
+    40% {
+        margin-left: -160px;
+    }
+    41% {
+        margin-left: -320px;
+    }
+
+    60% {
+        margin-left: -320px;
+    }
+    61% {
+        margin-left: -480px;
+    }
+
+    80% {
+        margin-left: -480px;
+    }
+    81% {
+        margin-left: -640px;
+    }
+
+    99% {
+        margin-left: -640px;
+    }
+    100% {
+        margin-left: -800px;
+    }
 }
 /* 联系方式 */
 .contact span{
